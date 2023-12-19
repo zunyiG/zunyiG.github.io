@@ -1,17 +1,199 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>列表 | Keep learning</title>
-    <meta name="description" content="keep learning">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body{
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      font-family: serif;
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff;
+      margin: 0;
+    }
+
+    .warpper{
+      width: 100%;
+      height: 100%;
+      font-size:0;
+    }
+
+    .imgBox, 
+    .contentBox {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    .contentBox {
+      writing-mode: vertical-rl;
+      padding-right: 20%;
+      font-size: 14px;
+      max-height:80%;
+    }
+
+    .author {
+      font-size: 16px;
+      color: #888;
+      margin-top: 2px;
+      letter-spacing: 4px;
+    }
+
+    .article {
+      font-size: 28px;
+      font-weight: 200;
+      margin-right: 32px;
+      letter-spacing: 12px;
+      line-height: 56px;
+      color: #555;
+    }
+
+    .imgBox {
+      background-color: #f5f5f5;
+      height: 100%;
+      background: url('https://img.xjh.me/random_img.php?return=302'
+    ) center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .from {
+      font-size: 40px;
+      letter-spacing: 12px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 24px;
+      right: 32px;
+    }
+
+    .logo{
+      writing-mode: vertical-rl;
+      letter-spacing: 16px;
+      font-size: 24px;
+      color: hsla(350, 100%, 50%, 0.3);
+    }
+
+    .logo:after{
+      content: " ";
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      background-color: rgba(0,0,0,0.05);
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      margin-left: -24px;
+      margin-top: -24px;
+    }
+
+    .oneceMore{
+      position: absolute;
+      writing-mode: vertical-rl;
+      letter-spacing: 8px;
+      top: 24px;
+      right: 40px;
+      border-right: 1px solid rgba(0,0,0,0.8);
+    }
+
+    .oneceMore_link{
+      text-decoration: none;
+      font-size: 20px;
+      color: rgba(0,0,0,0.9);
+    }
+
+    .oneceMore_link:hover{
+      color: rgba(0,0,0,0.5);
+    }
+
+    .share {
+      position: absolute;
+      right: 80px;
+      top: 24px;
+    }
+
+    .share .share_link {
+      writing-mode: vertical-rl;
+      letter-spacing: 8px;
+      margin: 0;
+      margin-bottom: 16px;
+      text-decoration: none;
+      color: rgba(0,0,0,0.9);
+      border-right: 1px solid rgba(0,0,0,0.8);
+      font-size: 12px;
+      display: block;
+      background-image: none;
+      float: none;
+      line-height: normal;
+      height: auto;
+    }
+
+    .share_link:hover {
+      color: rgba(0,0,0,0.5);
+    }
+
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+  <div class="warpper">
+    <div class="imgBox">
+    </div>
+    <div class="contentBox">
+      <div class="from">loading..</div>
+      <div class="author"></div>
+      <div class="article">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="logo">若依</div>
+  </div>
+  <div class="oneceMore">
+    <a href="javascript:void(0)" class="oneceMore_link" id="oneceMore" >OnceMore</a>
+  </div>
+  <div class="share">
+    <div class="bdsharebuttonbox">
+      <a href="#" class="share_link" data-cmd="tsina" title="分享到新浪微博">微博</a>
+      <a href="#" class="share_link" data-cmd="weixin" title="分享到微信">微信</a>
+      <a href="#" class="share_link" data-cmd="qzone" title="分享到QQ空间">QQ</a>
+    </div>
     
+  <!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{"bdSize":16},"image":{"viewList":["tsina","weixin","qzone"],"viewText":"","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+  </div>
+</body>
+
+<script>
+  $(function(){
+    var imgApi = 'https://img.xjh.me/random_img.php?return=302';
+    var textApi = 'https://v1.hitokoto.cn/?encode=json&c=a';
     
-    <link rel="preload" href="/assets/css/0.styles.ef148202.css" as="style"><link rel="preload" href="/assets/js/app.67e7f428.js" as="script"><link rel="preload" href="/assets/js/40.d1f5f3e3.js" as="script"><link rel="prefetch" href="/assets/js/10.9e81d398.js"><link rel="prefetch" href="/assets/js/11.677d4ba6.js"><link rel="prefetch" href="/assets/js/12.51d6780b.js"><link rel="prefetch" href="/assets/js/13.a1724e18.js"><link rel="prefetch" href="/assets/js/14.28dd4294.js"><link rel="prefetch" href="/assets/js/15.f2a7689f.js"><link rel="prefetch" href="/assets/js/16.cd9f0474.js"><link rel="prefetch" href="/assets/js/17.3640e356.js"><link rel="prefetch" href="/assets/js/18.0e89fc94.js"><link rel="prefetch" href="/assets/js/19.660c385c.js"><link rel="prefetch" href="/assets/js/2.c18e3c75.js"><link rel="prefetch" href="/assets/js/20.a70e4495.js"><link rel="prefetch" href="/assets/js/21.b7b4380c.js"><link rel="prefetch" href="/assets/js/22.7fe8571d.js"><link rel="prefetch" href="/assets/js/23.9c246f12.js"><link rel="prefetch" href="/assets/js/24.4ebab5c7.js"><link rel="prefetch" href="/assets/js/25.e0f6c8dc.js"><link rel="prefetch" href="/assets/js/26.667a1084.js"><link rel="prefetch" href="/assets/js/27.484b1e43.js"><link rel="prefetch" href="/assets/js/28.e08b6058.js"><link rel="prefetch" href="/assets/js/29.0901b7fb.js"><link rel="prefetch" href="/assets/js/3.1660a1d9.js"><link rel="prefetch" href="/assets/js/30.5c5cb9f5.js"><link rel="prefetch" href="/assets/js/31.381f1dec.js"><link rel="prefetch" href="/assets/js/32.8f68533f.js"><link rel="prefetch" href="/assets/js/33.74cd6521.js"><link rel="prefetch" href="/assets/js/34.9d137b36.js"><link rel="prefetch" href="/assets/js/35.50b3f97d.js"><link rel="prefetch" href="/assets/js/36.1ba216f1.js"><link rel="prefetch" href="/assets/js/37.39b36aaf.js"><link rel="prefetch" href="/assets/js/38.d86ece5f.js"><link rel="prefetch" href="/assets/js/39.ed51f794.js"><link rel="prefetch" href="/assets/js/4.46657140.js"><link rel="prefetch" href="/assets/js/41.cfb412eb.js"><link rel="prefetch" href="/assets/js/42.4e699448.js"><link rel="prefetch" href="/assets/js/43.e22ec204.js"><link rel="prefetch" href="/assets/js/44.0421ffff.js"><link rel="prefetch" href="/assets/js/45.58b817ec.js"><link rel="prefetch" href="/assets/js/46.541083b5.js"><link rel="prefetch" href="/assets/js/5.12d27dc6.js"><link rel="prefetch" href="/assets/js/6.25c40935.js"><link rel="prefetch" href="/assets/js/7.0b9bcdd6.js"><link rel="prefetch" href="/assets/js/8.c8621244.js"><link rel="prefetch" href="/assets/js/9.5e4b7b3b.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.ef148202.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">Keep learning</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link router-link-exact-active router-link-active">Home</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link router-link-exact-active router-link-active">Home</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" class="active sidebar-link">列表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/#计算机程序基础" class="sidebar-link">计算机程序基础</a></li><li class="sidebar-sub-header"><a href="/#函数式编程" class="sidebar-link">函数式编程</a></li><li class="sidebar-sub-header"><a href="/#react" class="sidebar-link">react</a></li><li class="sidebar-sub-header"><a href="/#数据可视化" class="sidebar-link">数据可视化</a></li><li class="sidebar-sub-header"><a href="/#javascript-开发风格" class="sidebar-link">JavaScript 开发风格</a></li><li class="sidebar-sub-header"><a href="/#架构" class="sidebar-link">架构</a></li><li class="sidebar-sub-header"><a href="/#工具库" class="sidebar-link">工具库</a></li><li class="sidebar-sub-header"><a href="/#css" class="sidebar-link">css</a></li><li class="sidebar-sub-header"><a href="/#移动端-pc" class="sidebar-link">移动端 &amp; PC</a></li><li class="sidebar-sub-header"><a href="/#测试" class="sidebar-link">测试</a></li><li class="sidebar-sub-header"><a href="/#后端开发" class="sidebar-link">后端开发</a></li><li class="sidebar-sub-header"><a href="/#数据层" class="sidebar-link">数据层</a></li><li class="sidebar-sub-header"><a href="/#服务端渲染" class="sidebar-link">服务端渲染</a></li><li class="sidebar-sub-header"><a href="/#webassembly" class="sidebar-link">WebAssembly</a></li></ul></li></ul> </div> <div class="page"> <div class="content"><h1 id="列表"><a href="#列表" aria-hidden="true" class="header-anchor">#</a> 列表</h1> <h2 id="计算机程序基础"><a href="#计算机程序基础" aria-hidden="true" class="header-anchor">#</a> 计算机程序基础</h2> <ul><li><a href="/computer-program/">计算机程序的构造和解释（第2版）</a></li> <li><a href="/programming-language/">程序设计语言——实践之路</a></li> <li>逻辑编程 Prolog</li> <li>用位运算实现简单计算器</li> <li>数据结构 + 算法</li></ul> <h2 id="函数式编程"><a href="#函数式编程" aria-hidden="true" class="header-anchor">#</a> 函数式编程</h2> <ul><li><a href="/functional-programming/js-fp/">js functional programming</a></li> <li><a href="/haskell/">Haskell</a></li> <li>Reason</li> <li>elm</li> <li>RxJS</li> <li>PureScript</li></ul> <h2 id="react"><a href="#react" aria-hidden="true" class="header-anchor">#</a> react</h2> <ul><li>react 全家桶</li> <li><a href="/react/react-tutorial/">react 官方教程</a></li> <li>ReasonReact</li></ul> <h2 id="数据可视化"><a href="#数据可视化" aria-hidden="true" class="header-anchor">#</a> 数据可视化</h2> <ul><li>d3</li> <li>GIS</li> <li>antV-L7</li></ul> <h2 id="javascript-开发风格"><a href="#javascript-开发风格" aria-hidden="true" class="header-anchor">#</a> JavaScript 开发风格</h2> <ul><li><a href="/typescript/">typescript</a></li> <li>es6 - es7</li></ul> <h2 id="架构"><a href="#架构" aria-hidden="true" class="header-anchor">#</a> 架构</h2> <ul><li><a href="/front-end-framework/">前端架构</a></li></ul> <h2 id="工具库"><a href="#工具库" aria-hidden="true" class="header-anchor">#</a> 工具库</h2> <ul><li>loadsh</li> <li>moment</li> <li>date-fns</li> <li>underscore</li> <li>Ramda</li> <li>RxJs</li></ul> <h2 id="css"><a href="#css" aria-hidden="true" class="header-anchor">#</a> css</h2> <ul><li>neat - grid sass 工具库</li></ul> <h2 id="移动端-pc"><a href="#移动端-pc" aria-hidden="true" class="header-anchor">#</a> 移动端 &amp; PC</h2> <ul><li>Electron</li> <li>React Native</li></ul> <h2 id="测试"><a href="#测试" aria-hidden="true" class="header-anchor">#</a> 测试</h2> <ul><li>jest</li> <li>mocha</li> <li>Ava</li></ul> <h2 id="后端开发"><a href="#后端开发" aria-hidden="true" class="header-anchor">#</a> 后端开发</h2> <ul><li>node</li> <li><a href="/koa/">Koa2</a></li> <li>Express</li> <li>Golang</li></ul> <h2 id="数据层"><a href="#数据层" aria-hidden="true" class="header-anchor">#</a> 数据层</h2> <ul><li>graphql + Apollo</li> <li>resetful</li></ul> <h2 id="服务端渲染"><a href="#服务端渲染" aria-hidden="true" class="header-anchor">#</a> 服务端渲染</h2> <ul><li>nuxt.js</li></ul> <h2 id="webassembly"><a href="#webassembly" aria-hidden="true" class="header-anchor">#</a> WebAssembly</h2> <ul><li>AssemblyScript</li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
-    <script src="/assets/js/app.67e7f428.js" defer></script><script src="/assets/js/40.d1f5f3e3.js" defer></script>
-  </body>
+    var initText = function() {
+      $.get(textApi, function(textObj) {
+        var article = textObj.hitokoto;
+        var author = textObj.creator;
+        var from = textObj.from;
+        
+        $(".author").text(author);
+        $(".from").text(from);
+        $(".article").text(article);
+    });
+    }
+    initText();
+    $("#oneceMore").click(function() {
+      initText();
+            $(".imgBox").css('backgroundImage','url('+imgApi+ '&_random='+Math.random()+')');
+    });
+  });
+</script>
 </html>
